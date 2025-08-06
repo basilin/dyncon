@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dyncon-dev:
+    build: .
+    container_name: dyncon-dev
+    ports:
+      - "8080:80"
+    environment:
+      - API_URL=https://dev.example.com
+      - ENVIRONMENT=development
+      - ENABLE_FEATURE_X=true
+    restart: unless-stopped
